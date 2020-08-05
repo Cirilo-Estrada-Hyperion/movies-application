@@ -1,38 +1,40 @@
-const $ = require('jquery');
-
-// VARIABLE DECLARATIONS
-let selectedMovie = {
-  id: 0
+module.exports = {
+  getMovies: () => {
+    return fetch('/api/movies')
+        .then(response => response.json());
+  },
+  getMovies : (id) => {
+    return fetch(`/api/movies/${id}`)
+        .then(resp => resp.json());
+  },
+  /*This function creates new movies*/
+  postMovies : (movie) => {
+    return fetch('api/movies', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(movie),
+    })
+  },
+  /*This function edits movies*/
+  patchMovies : (movie, id) => {
+    return fetch(`api/movies/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(movie),
+    })
+  },
+  /*This function deletes movies*/
+  deleteMovies : (id) => {
+    return fetch(`api/movies/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  }
 };
 
-const getMovies = () => {
-  return fetch('/api/movies')
-      .then(response => {
-        return response.json();
-      });
-};
-
-const displayAllMovies = () => {
-  getMovies().then((movies) => {
-    $('.movie-list').html(createMovieString(movies));
-    activateMovieList();
-    Promise.resolve().then(response => "Success: " + response);
-  }).catch((error) => {
-    alert('Oh no! Something went wrong.\nCheck the console for details.');
-    console.log(error);
-  });
-};
-
-  module.exports = {
-    selectedMovie,
-    getMovies,
-    displayAllMovies,
-    createMovieString,
-    addMovie,
-    editMovie,
-    deleteMovie,
-    searchMovies,
-    renderSearchResults,
-    toggleDisable,
-    renderLoading
-};
