@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8" />
     <title>My Application</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="public/style.css" />
+
 </head>
+
 <body>
-
-    <div class="container">
-        <h1>Hello There!</h1>
-        <p>To get started, edit <code>src/index.js</code>.</p>
+<div class="wrapper">
+    <div class="heading-container">
+        <h1>Movie Gallery</h1>
+        <div id="nav-icon1">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
+    <div class="main-body-container">
+        <ul class="movie-list">
+            <!--Generated Dynamically using JS-->
+        </ul>
+    </div>
+</div>
 
-    <form>
-        <input type="text">
-        <button id="add" type="submit">Add Movie</button>
-    </form>
+<nav class="menu-sidebar-container menu-close">
+    <ul class="menu-links">
+        <li class="menu-item">
+            <label for="menu-search" id="menu-search-label">Search</label>
+            <input type="text" id="menu-search">
+        </li>
+        <li class="menu-item">
+            <h2 class="add-movie">Add Movie</h2>
+            <form class="add-movie-container">
+                <label for="add-movie-title" class="add-movie-title">Movie Title:
+                    <input type="text" id="add-movie-title">
+                </label>
 
-    <table id="movieGallery" class="table table-hover table-striped">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Rating</th>
-            <th>ID</th>
-            <th>Genre</th>
-        </tr>
-        </thead>
-        <tbody id="insertMovies"></tbody>
-    </table>
+                <label for="add-movie-rating" class="add-movie-rating">Movie Pops:
+                    <input type="number" min="1" max="5" value="3" id="add-movie-rating">
+                </label>
+
+                <button type="button" id="add-button">Add</button>
+            </form>
+        </li>
+        <li class="menu-item">
+            <h2 class="edit-movie">Edit Movie</h2>
+            <form class="edit-movie-container">
+                <label for="edit-movie-title" class="edit-movie-title">Edit Movie Title:
+                    <input type="text" id="edit-movie-title">
+                </label>
+                <label for="edit-movie-rating" class="edit-movie-rating"> Edit Movie Pops:
+                    <input type="number" id="edit-movie-rating" min="1" max="5" value="3">
+                </label>
+                <button type="button" id="edit-button">Edit</button>
+                <button type="button" id="delete-button">Delete</button>
+            </form>
+        </li>
+    </ul>
+</nav>
 
     <script src="./main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
