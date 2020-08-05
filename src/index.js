@@ -8,6 +8,7 @@ sayHello('World');*/
 /**
  * require style imports
  */
+
 const {getMovies} = require('./api.js');
 
 getMovies().then((movies) => {
@@ -17,10 +18,20 @@ getMovies().then((movies) => {
 
   });
 })
-
-
-
     .catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.')
   console.log(error);
 });
+
+
+const url = './api.js';
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(movies),
+};
+fetch(url, options)
+    .then(/* post was created successfully */)
+    .catch(/* handle errors */);

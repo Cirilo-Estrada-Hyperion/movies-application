@@ -12,21 +12,26 @@
         <p>To get started, edit <code>src/index.js</code>.</p>
     </div>
 
-    <table id="movieGallery">
+    <form>
+        <input type="text">
+        <button id="add" type="submit">Add Movie</button>
+    </form>
+
+    <table id="movieGallery" class="table table-hover table-striped">
+        <thead>
         <tr>
             <th>Title</th>
             <th>Rating</th>
-            <th>Id</th>
+            <th>ID</th>
             <th>Genre</th>
         </tr>
-        <tr>
-            <td id="titles"></td>
-            <td id="rating"></td>
-            <td id="id"></td>
-            <td id="genre"></td>
-        </tr>
+        </thead>
+        <tbody id="insertMovies"></tbody>
     </table>
 
     <script src="./main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </body>
 </html>
