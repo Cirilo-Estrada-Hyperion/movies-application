@@ -1,3 +1,7 @@
+//allows jquery to be used
+const $ = require('jquery');
+
+
 /**
  * es6 modules and imports
  */
@@ -33,5 +37,25 @@ const options = {
   body: JSON.stringify(movies),
 };
 fetch(url, options)
-    .then(/* post was created successfully */)
-    .catch(/* handle errors */);
+    .then((movies) => {
+      movies.forEach (({title, rating, id, genre}) => {
+
+      })
+    })
+    .catch();
+
+
+/*
+const movie = { new movie info (title, rating, id, genre)};
+const url = '/api/movies';
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(movie),
+};
+fetch(url, options)
+    .then(/!* post was created successfully *!/)
+    .catch(/!* handle errors *!/);
+*/
