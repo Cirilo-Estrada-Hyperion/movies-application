@@ -3,12 +3,12 @@ module.exports = {
     return fetch('/api/movies')
         .then(response => response.json());
   },
-  getMovies : (id) => {
+  getMovie : (id) => {
     return fetch(`/api/movies/${id}`)
         .then(resp => resp.json());
   },
   /*This function creates new movies*/
-  postMovies : (movie) => {
+  postMovie : (movie) => {
     return fetch('api/movies', {
       method: 'POST',
       headers: {
@@ -18,7 +18,7 @@ module.exports = {
     })
   },
   /*This function edits movies*/
-  patchMovies : (movie, id) => {
+  patchMovie : (movie, id) => {
     return fetch(`api/movies/${id}`, {
       method: 'PATCH',
       headers: {
@@ -28,7 +28,7 @@ module.exports = {
     })
   },
   /*This function deletes movies*/
-  deleteMovies : (id) => {
+  deleteMovie : (id) => {
     return fetch(`api/movies/${id}`, {
       method: 'DELETE',
       headers: {

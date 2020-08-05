@@ -1,35 +1,34 @@
-//allows jquery to be used
-// const $ = require('jquery');
-
-
 /**
  * es6 modules and imports
  */
-/*import sayHello from './hello';
+import sayHello from './hello';
 
-sayHello('World');*/
+sayHello('World');
 
 /**
  * require style imports
  */
-//
-// const {getMovies} = require('./api.js');
-//
-// getMovies().then((movies) => {
-//   // console.log('Here are all the movies:');
-//   movies.forEach(({title, rating, id, genre}) => {
-//     // console.log(`id#${id} - ${title} - rating: ${rating} - genre: ${genre}`);
-//
-//   });
-//
-//
-// })
-//     .catch((error) => {
-//   alert('Oh no! Something went wrong.\nCheck the console for details.')
-//   console.log(error);
-// });
 
+const {getMovies, getMovie, postMovie, patchMovie, deleteMovie} = require('./api.js');
 
+getMovies().then((movies) => {
+  console.log('Here are all the movies:');
+  movies.forEach(({title, rating, id, genre}) => {
+    console.log(`id#${id} - ${title} - rating: ${rating} - genre: ${genre}`);
+
+  });
+})
+    .catch((error) => {
+  alert('Oh no! Something went wrong.\nCheck the console for details.')
+  console.log(error);
+});
+
+getMovie(1)
+    .then(movie => {
+      console.log("Making a request to a single movie");
+      console.log(`${movie.title} - ${movie.rating} - ${movie.genre}`);
+    })
+    .catch(() => console.log('The important thing is you tried...'));
 
 
 /*const url = './api.js';
