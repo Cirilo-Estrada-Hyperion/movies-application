@@ -9,6 +9,10 @@ module.exports = {
   },
   /*This function creates new movies*/
   postMovie : (movie) => {
+    let movieTitle = $("#add-title").val();
+    let movieRating = $("#add-rating").val();
+    let movieGenre = $("#add-genre").val();
+    const movieData = {title: movieTitle, rating: movieRating, genre: movieGenre};
     return fetch('api/movies', {
       method: 'POST',
       headers: {
@@ -17,6 +21,9 @@ module.exports = {
       body: JSON.stringify(movie),
     })
   },
+
+
+
   /*This function edits movies*/
   patchMovie : (movie, id) => {
     return fetch(`api/movies/${id}`, {
