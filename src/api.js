@@ -26,11 +26,11 @@ module.exports = {
 
 
   /*This function edits movies*/
-  patchMovie : () => {
+  patchMovie : (movie_id) => {
     let editTitle = $("#edit-title").val();
     let editRating = $("#edit-rating").val();
     let editGenre = $("#edit-genre").val();
-    let movie_id = $("#movie-id").val();
+    // let movie_id = $("#movie-id").val();
     const editingData = {title: editTitle, rating: editRating, genre: editGenre};
      return fetch(`api/movies/${movie_id}`,{
        method: 'PATCH',
