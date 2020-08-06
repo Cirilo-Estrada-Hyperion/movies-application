@@ -10,6 +10,7 @@
 
 <body>
 
+<!--Movie Gallery population-->
 <div class="wrapper">
     <div class="heading-container">
         <h1>Movie Gallery</h1>
@@ -27,15 +28,17 @@
     </div>
 </div>
 
+<!--Search for specific movie-->
 <nav class="menu-sidebar-container menu-close">
     <ul class="menu-links">
         <li class="menu-item">
             <label for="menu-search" id="menu-search-label">Search</label>
             <input type="text" id="menu-search">
         </li>
+        <!--Adding Specific Movie-->
         <li class="menu-item">
             <h2 class="add-movie">Add Movie</h2>
-            <form class="add-movie-container">
+            <form class="add-movie-container" id="addMovies">
                 <label for="add-movie-title" class="add-movie-title">Movie Title:
                     <input type="text" id="add-movie-title">
                 </label>
@@ -52,6 +55,7 @@
             </form>
         </li>
 
+        <!--Editing a Specific Movie-->
         <li class="menu-item">
             <h2 class="edit-movie">Edit Movie</h2>
             <form class="edit-movie-container">
@@ -66,6 +70,7 @@
                 <br>
                 <button type="button" id="edit-button">Edit</button>
 
+        <!--Deleting a Specific Movie-->
         <li class="menu-item">
                 <h2 class="delete-movie">Delete Movie</h2>
                 <form class="delete-movie-container">
