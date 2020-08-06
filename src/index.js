@@ -30,6 +30,12 @@ const loadData = () => {
         });
         $("#insertMovie").append(html);
     })
+        // Edit Movie
+        $('#edit-button').click(function(){
+            let movie_id = $(this).attr("data-id")
+         console.log(movie_id);
+            $("#movie-id").val(movie_id);
+        })
         .catch((error) => {
             alert('Oh no! Something went wrong.\nCheck the console for details.')
             console.log(error);
@@ -65,7 +71,7 @@ $("#add-button").click(() =>{
 // /*This patch movie function will edit a single movie within the movie gallery*/
 
 $("#edit-button").click(() =>{
-    postMovie().then(()=>{
+    patchMovie().then(()=>{
         loadData();
     })
 })

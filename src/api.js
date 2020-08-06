@@ -21,21 +21,20 @@ module.exports = {
       },
       body: JSON.stringify(movieData),
     })
-  }
-
-  ,
+  },
 
 
 
   /*This function edits movies*/
-  patchMovie : (movie, id) => {
+  patchMovie : () => {
     let editTitle = $("#edit-title").val();
     let editRating = $("#edit-rating").val();
     let editGenre = $("#edit-genre").val();
+    let movie_id = $("#movie-id").val();
     const editingData = {title: editTitle, rating: editRating, genre: editGenre};
-    return fetch(`api/movies/${id}`, {
-      method: 'PATCH',
-      headers: {
+     return fetch(`api/movies/${movie_id}`,{
+       method: 'PATCH',
+       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(editingData),
