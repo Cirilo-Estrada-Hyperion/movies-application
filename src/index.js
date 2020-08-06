@@ -1,9 +1,11 @@
 /**
  * es6 modules and imports
  */
+/*
 import sayHello from './hello';
 
 sayHello('World');
+*/
 
 /**
  * require style imports
@@ -23,6 +25,7 @@ getMovies().then((movies) => {
   console.log(error);
 });
 
+/*This get movie function will grab a single movie id for search functionality*/
 getMovie(1)
     .then(movie => {
       console.log("Making a request to a single movie");
@@ -30,6 +33,29 @@ getMovie(1)
     })
     .catch(() => console.log('The important thing is you tried...'));
 
+
+/*This post movie function will add a single movie to the movie gallery*/
+postMovie()
+    .then(addMovie => {
+
+    })
+    .catch(() => console.log("Please add a movie"));
+
+
+/*This patch movie function will edit a single movie within the movie gallery*/
+patchMovie()
+    .then(editMovie => {
+
+    })
+    .catch(() => console.log("Feel free to edit a movie"));
+
+
+/*This delete movie function will delete a single movie within the movie gallery*/
+deleteMovie()
+    .then(deleteMovie => {
+
+    })
+    .catch(() => console.log("Take it out of the gallery if you don't like it"));
 
 /*const url = './api.js';
 const options = {
