@@ -56,23 +56,37 @@ getMovie(1)
 
 
 const addData = () => {
+    let movieTitle = $("#add-title").val();
+    let movieRating = $("#add-rating").val();
+    let movieGenre = $("#add-genre").val();
 
-    postMovie()
-        .then(addMovie => {
 
 
-        })
-    $("#insertMovie").append(html)
-    html += "<tr>" +
-        "<td>" + title + "</td>" +
-        "<td>" + rating + "</td>" +
-        "<td>" + genre + "</td>" +
-        "</tr>"
 
-        .catch(() => console.log("Please add a movie"));
+    /*   postMovie()
+           .then((addMovie) => {
+       let html = "";
+
+         $("#insertMovie").empty();
+
+         movies.forEach(({title, rating, genre})) =>
+               {
+
+                   html += "<tr>" +
+                       "<td>" + title + "</td>" +
+                       "<td>" + rating + "</td>" +
+                       "<td>" + genre + "</td>" +
+                       "</tr>";
+               }
+       $("#insertMovie").append(html);
+         }
+           }
+
+
+           .catch(() => console.log("Please add a movie"));
+   }*/
 }
-
-$("#add-button").click(addData, loadData);
+// $("#add-button").click(addData, loadData);
 
 // /*This patch movie function will edit a single movie within the movie gallery*/
 // patchMovie()
