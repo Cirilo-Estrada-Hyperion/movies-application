@@ -9,19 +9,21 @@
 </head>
 
 <body>
+
 <div class="wrapper">
     <div class="heading-container">
         <h1>Movie Gallery</h1>
-        <div id="nav-icon1">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <div class="main-body-container">
-        <ul class="movie-list">
-            <!--Generated Dynamically using JS-->
-        </ul>
+        <table id="movie-gallery" class="table table-hover table-striped">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Genre</th>
+            </tr>
+            </thead>
+            <tbody id="insertMovie"></tbody>
+        </table>
+
     </div>
 </div>
 
@@ -38,7 +40,7 @@
                     <input type="text" id="add-movie-title">
                 </label>
 
-                <label for="add-movie-rating" class="add-movie-rating">Movie Pops:
+                <label for="add-movie-rating" class="add-movie-rating">Movie Rating:
                     <input type="number" min="1" max="5" value="3" id="add-movie-rating">
                 </label>
 
@@ -51,10 +53,20 @@
                 <label for="edit-movie-title" class="edit-movie-title">Edit Movie Title:
                     <input type="text" id="edit-movie-title">
                 </label>
-                <label for="edit-movie-rating" class="edit-movie-rating"> Edit Movie Pops:
+                <label for="edit-movie-rating" class="edit-movie-rating"> Edit Movie Rating:
                     <input type="number" id="edit-movie-rating" min="1" max="5" value="3">
                 </label>
                 <button type="button" id="edit-button">Edit</button>
+
+        <li class="menu-item">
+                <h2 class="delete-movie">Delete Movie</h2>
+                <form class="delete-movie-container">
+                    <label for="delete-movie-title" class="delete-movie-title">Delete Movie Title:
+                        <input type="text" id="delete-movie-title">
+                    </label>
+                <label for="delete-movie-rating" class="delete-movie-rating"> Delete Movie Rating:
+                    <input type="number" id="delete-movie-rating" min="1" max="5" value="3">
+                </label>
                 <button type="button" id="delete-button">Delete</button>
             </form>
         </li>
