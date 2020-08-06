@@ -62,12 +62,17 @@ const addData = () => {
 
 
         })
-
+    $("#insertMovie").append(html)
+    html += "<tr>" +
+        "<td>" + title + "</td>" +
+        "<td>" + rating + "</td>" +
+        "<td>" + genre + "</td>" +
+        "</tr>"
 
         .catch(() => console.log("Please add a movie"));
 }
 
-
+$("#add-button").click(addData, loadData);
 
 // /*This patch movie function will edit a single movie within the movie gallery*/
 // patchMovie()
