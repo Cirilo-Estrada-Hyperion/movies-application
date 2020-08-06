@@ -8,7 +8,8 @@ module.exports = {
         .then(resp => resp.json());
   },
   /*This function creates new movies*/
-  postMovie : (movie) => {
+
+  postMovie : () => {
     let movieTitle = $("#add-title").val();
     let movieRating = $("#add-rating").val();
     let movieGenre = $("#add-genre").val();
@@ -18,22 +19,33 @@ module.exports = {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(movie),
+      body: JSON.stringify(movieData),
     })
-  },
+  }
+
+  ,
 
 
 
   /*This function edits movies*/
   patchMovie : (movie, id) => {
+    let editTitle = $("#edit-title").val();
+    let editRating = $("#edit-rating").val();
+    let editGenre = $("#edit-genre").val();
+    const editingData = {title: editTitle, rating: editRating, genre: editGenre};
     return fetch(`api/movies/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(movie),
+      body: JSON.stringify(editingData),
     })
   },
+
+
+
+
+
   /*This function deletes movies*/
   deleteMovie : (id) => {
     return fetch(`api/movies/${id}`, {

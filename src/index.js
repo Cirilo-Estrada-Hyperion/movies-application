@@ -52,21 +52,24 @@ getMovie(1)
 */
 
 
+
 /*This post movie function will add a single movie to the movie gallery*/
 
-$("#add-button").click((e) =>{
-    postMovie(e).then(()=>{
-
+$("#add-button").click(() =>{
+    postMovie().then(()=>{
+        loadData();
     })
 })
 
 
 // /*This patch movie function will edit a single movie within the movie gallery*/
-// patchMovie()
-//     .then(editMovie => {
-//
-//     })
-//     .catch(() => console.log("Feel free to edit a movie"));
+
+$("#edit-button").click(() =>{
+    postMovie().then(()=>{
+        loadData();
+    })
+})
+
 //
 //
 // /*This delete movie function will delete a single movie within the movie gallery*/
@@ -75,35 +78,3 @@ $("#add-button").click((e) =>{
 //
 //     })
 //     .catch(() => console.log("Take it out of the gallery if you don't like it"));
-
-/*const url = './api.js';
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(movies),
-};
-fetch(url, options)
-    .then((movies) => {
-      movies.forEach (({title, rating, id, genre}) => {
-
-      })
-    })
-    .catch();*/
-
-
-/*
-const movie = { new movie info (title, rating, id, genre)};
-const url = '/api/movies';
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(movie),
-};
-fetch(url, options)
-    .then(/!* post was created successfully *!/)
-    .catch(/!* handle errors *!/);
-*/
