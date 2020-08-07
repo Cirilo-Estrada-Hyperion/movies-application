@@ -31,13 +31,14 @@ const loadData = () => {
         $("#insertMovie").append(html);
     })
         // Edit Movie
-        $('#edit-button').click(function(){
-            let movie_id = $(this).attr("data-id")
+        // $('#edit-button').click(function(){
+            // let movie_id = $(this).attr("data-id")
 
-            patchMovie(movie_id);
+            // patchMovie(movie_id);
          // console.log(movie_id);
          //    $("#movie-id").val(movie_id);
-        })
+        // })
+
         .catch((error) => {
             alert('Oh no! Something went wrong.\nCheck the console for details.')
             console.log(error);
@@ -81,6 +82,11 @@ $("#edit-button").click(() =>{
 //
 //
 // /*This delete movie function will delete a single movie within the movie gallery*/
+/*$("#delete-button").click(() =>{
+    deleteMovie(${id}).then(() => {
+        loadData();
+    })
+})*/
 // deleteMovie()
 //     .then(deleteMovie => {
 //

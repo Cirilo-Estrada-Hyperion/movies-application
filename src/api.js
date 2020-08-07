@@ -1,12 +1,16 @@
 module.exports = {
+  /*Grab all movies*/
   getMovies: () => {
     return fetch('/api/movies')
         .then(response => response.json());
   },
+
+  /*Grab a single movie*/
   getMovie : (id) => {
     return fetch(`/api/movies/${id}`)
         .then(resp => resp.json());
   },
+
   /*This function creates new movies*/
 
   postMovie : () => {
