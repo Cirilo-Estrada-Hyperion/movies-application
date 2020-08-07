@@ -14,7 +14,7 @@
 <div class="wrapper">
     <div class="heading-container">
         <h1>Movie Gallery</h1>
-        <table id="movie-gallery" class="table table-hover table-striped">
+        <table id="movie-gallery" class="table table-hover table-dark">
             <thead>
             <tr>
                 <th>Title</th>
@@ -54,6 +54,7 @@
                 <button type="button" id="add-button">Add</button>
             </form>
         </li>
+        <br>
 
         <!--Editing a Specific Movie-->
         <li class="menu-item">
@@ -70,9 +71,11 @@
                 <br>
                 <button data-id=${movies.id} type="button" id="edit-button">Edit</button>
 
+                <br>
         <!--Deleting a Specific Movie-->
         <li class="menu-item">
                 <h2 class="delete-movie">Delete Movie</h2>
+
                 <form class="delete-movie-container">
                     <label for="delete-movie-title" class="delete-movie-title">Movie Title:
                         <input type="text" id="delete-movie-title">
