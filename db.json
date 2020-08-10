@@ -71,6 +71,18 @@
       "rating": "3",
       "genre": "horror",
       "id": 11
+    },
+    {
+      "title": "Nightmare Before Christmas",
+      "rating": "4",
+      "genre": "Animated",
+      "id": 12
+    },
+    {
+      "title": "Sonic The Hedgehog",
+      "rating": "1",
+      "genre": "Horror",
+      "id": 13
     }
   ]
 }
